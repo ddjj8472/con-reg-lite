@@ -1,0 +1,81 @@
+:root {
+  --ink: #142018;
+  --muted: #68736b;
+  --line: #dfe7e1;
+  --paper: #ffffff;
+  --canvas: #f5f8f4;
+  --accent: #1d6b45;
+  --accent-dark: #145337;
+  --soft: #e7f2e9;
+  --warning: #fff8e7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Pretendard, "Noto Sans KR", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+button, input, textarea { font: inherit; }
+
+.shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0 40px; }
+.hero { text-align: center; margin-bottom: 30px; }
+.eyebrow, .step { margin: 0; color: var(--accent); font-size: 0.72rem; font-weight: 800; letter-spacing: .12em; }
+h1 { margin: 5px 0; font-size: clamp(2.2rem, 7vw, 3.4rem); letter-spacing: -.06em; }
+.subtitle { margin: 0; color: var(--muted); }
+
+.notice, .card, .answer-card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; }
+.notice { display: grid; gap: 4px; padding: 16px 18px; margin-bottom: 16px; background: var(--warning); border-color: #f0e1b5; font-size: .9rem; }
+.notice strong { color: #785a00; }
+.card { padding: 24px; margin-top: 16px; }
+.compact { padding: 21px 24px; }
+.section-heading, .answer-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 18px; }
+h2 { margin: 2px 0 0; font-size: 1.25rem; letter-spacing: -.03em; }
+h3 { margin: 0 0 8px; font-size: 1rem; }
+
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+label { display: grid; gap: 7px; color: #405047; font-size: .9rem; font-weight: 700; }
+input, textarea { width: 100%; border: 1px solid #cbd8ce; border-radius: 10px; background: #fff; color: var(--ink); padding: 12px; outline: none; font-weight: 400; }
+input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(29, 107, 69, .12); }
+textarea { resize: vertical; min-height: 136px; }
+.question-label { margin-top: 16px; }
+.counter { color: var(--muted); font-size: .75rem; font-weight: 500; text-align: right; }
+
+.source-list { display: grid; gap: 9px; }
+.source-option { display: flex; align-items: center; gap: 10px; padding: 9px 0; cursor: pointer; font-size: .92rem; font-weight: 600; }
+.source-option input { width: 18px; height: 18px; accent-color: var(--accent); }
+.source-option a { margin-left: auto; color: var(--accent); font-size: .82rem; text-decoration: none; }
+.source-option a:hover { text-decoration: underline; }
+.helper, details { margin: 0; color: var(--muted); font-size: .86rem; }
+.api-row { display: flex; gap: 8px; margin: 12px 0; }
+.api-row input { min-width: 0; }
+details p { margin-bottom: 0; }
+summary { cursor: pointer; color: var(--accent); }
+
+.submit-button { width: 100%; margin: 18px 0 0; padding: 15px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; cursor: pointer; font-weight: 800; }
+.submit-button:hover:not(:disabled) { background: var(--accent-dark); }
+.submit-button:disabled { cursor: wait; opacity: .65; }
+.outline-button, .text-button { border: 0; cursor: pointer; font-weight: 700; }
+.outline-button { padding: 0 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--accent); }
+.text-button { padding: 4px 0; background: transparent; color: var(--accent); font-size: .86rem; white-space: nowrap; }
+
+.answer-card { padding: 24px; margin-top: 18px; }
+.answer { white-space: pre-wrap; color: #26342b; }
+.answer-sources { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.answer-sources a { display: block; color: var(--accent); margin: 6px 0; text-decoration: none; font-size: .92rem; }
+.answer-sources a:hover { text-decoration: underline; }
+.status { min-height: 1.5em; margin: 12px 2px; color: var(--muted); text-align: center; font-size: .9rem; }
+.hidden { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+footer { margin-top: 32px; color: var(--muted); text-align: center; font-size: .78rem; }
+
+@media (max-width: 580px) {
+  .shell { width: min(100% - 24px, 760px); padding-top: 36px; }
+  .card, .answer-card { padding: 19px; }
+  .field-grid { grid-template-columns: 1fr; }
+  .source-option { align-items: flex-start; }
+}
